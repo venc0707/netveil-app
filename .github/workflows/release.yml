@@ -1,20 +1,52 @@
 name: Release
+
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
-      - 'v[0-9]+.[0-9]+.[0-9]+.*'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - 'v*'
 
 jobs:
-  build-release:
-    uses: ./.github/workflows/build.yml
-    secrets: inherit
-    permissions: write-all
-    with:
-      upload-artifact: true
-      tag-name: "${{ github.ref_name }}"
-      channel: "${{ github.ref_type == 'tag' && endsWith(github.ref_name, 'dev') && 'dev' || github.ref_type != 'tag' && 'dev' || 'prod' }}"
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.38.5'
+
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > android/app/netveil.keystore
+
+      - name: Build APK
+        run: |
+          flutter pub get
+          flutter build apk --release \
+            --dart-define=app.flavor=release
+        env:
+          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEYSTORE_PATH: netveil.keystore
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: netveil-android
+          path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/app/outputs/flutter-apk/app-release.apk
+          name: NetVeil ${{ github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
