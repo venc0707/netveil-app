@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:hiddify/features/log/data/log_data_providers.dart';
-import 'package:hiddify/features/log/model/log_entity.dart';
-import 'package:hiddify/features/log/model/log_level.dart';
-import 'package:hiddify/features/log/overview/logs_overview_state.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:netveil/features/log/data/log_data_providers.dart';
+import 'package:netveil/features/log/model/log_entity.dart';
+import 'package:netveil/features/log/model/log_level.dart';
+import 'package:netveil/features/log/overview/logs_overview_state.dart';
+import 'package:netveil/hiddifycore/init_signal.dart';
+import 'package:netveil/utils/riverpod_utils.dart';
+import 'package:netveil/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:rxdart/rxdart.dart';
 

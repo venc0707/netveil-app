@@ -1,15 +1,15 @@
 import 'package:dartx/dartx.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:hiddify/core/app_info/app_info_provider.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/router/bottom_sheets/bottom_sheets_notifier.dart';
-import 'package:hiddify/features/home/widget/connection_button.dart';
-import 'package:hiddify/features/profile/notifier/active_profile_notifier.dart';
-import 'package:hiddify/features/profile/widget/profile_tile.dart';
-import 'package:hiddify/features/proxy/active/active_proxy_card.dart';
-import 'package:hiddify/features/proxy/active/active_proxy_delay_indicator.dart';
-import 'package:hiddify/gen/assets.gen.dart';
+import 'package:netveil/core/app_info/app_info_provider.dart';
+import 'package:netveil/core/localization/translations.dart';
+import 'package:netveil/core/router/bottom_sheets/bottom_sheets_notifier.dart';
+import 'package:netveil/features/home/widget/connection_button.dart';
+import 'package:netveil/features/profile/notifier/active_profile_notifier.dart';
+import 'package:netveil/features/profile/widget/profile_tile.dart';
+import 'package:netveil/features/proxy/active/active_proxy_card.dart';
+import 'package:netveil/features/proxy/active/active_proxy_delay_indicator.dart';
+import 'package:netveil/gen/assets.gen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 

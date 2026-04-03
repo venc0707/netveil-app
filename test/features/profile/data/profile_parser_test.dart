@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hiddify/features/profile/data/profile_parser.dart';
-import 'package:hiddify/features/profile/model/profile_entity.dart';
+import 'package:netveil/features/profile/data/profile_parser.dart';
+import 'package:netveil/features/profile/model/profile_entity.dart';
 import 'package:uuid/uuid.dart';
 
 void main() {

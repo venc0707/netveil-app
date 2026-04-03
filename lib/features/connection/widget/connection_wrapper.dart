@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/notification/in_app_notification_controller.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/profile/notifier/active_profile_notifier.dart';
-import 'package:hiddify/features/settings/notifier/config_option/config_option_notifier.dart';
-import 'package:hiddify/utils/custom_loggers.dart';
+import 'package:netveil/core/localization/translations.dart';
+import 'package:netveil/core/notification/in_app_notification_controller.dart';
+import 'package:netveil/features/connection/notifier/connection_notifier.dart';
+import 'package:netveil/features/profile/notifier/active_profile_notifier.dart';
+import 'package:netveil/features/settings/notifier/config_option/config_option_notifier.dart';
+import 'package:netveil/utils/custom_loggers.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ConnectionWrapper extends StatefulHookConsumerWidget {

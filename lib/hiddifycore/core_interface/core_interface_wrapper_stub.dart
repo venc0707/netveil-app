@@ -1,4 +1,4 @@
-import 'package:hiddify/hiddifycore/core_interface/core_interface.dart';
+import 'package:netveil/hiddifycore/core_interface/core_interface.dart';
 
 CoreInterface getCoreInterface() {
   return CoreInterface();

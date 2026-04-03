@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:grpc/grpc.dart';
-import 'package:hiddify/core/localization/translations.dart';
+import 'package:netveil/core/localization/translations.dart';
 
 typedef PresentableError = ({String type, String? message});
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hiddify/core/localization/translations.dart';
-import 'package:hiddify/core/router/dialog/dialog_notifier.dart';
+import 'package:netveil/core/localization/translations.dart';
+import 'package:netveil/core/router/dialog/dialog_notifier.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:protobuf/protobuf.dart';
 

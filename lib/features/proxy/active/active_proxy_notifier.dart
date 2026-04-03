@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:hiddify/core/haptic/haptic_service.dart';
-import 'package:hiddify/core/preferences/general_preferences.dart';
-import 'package:hiddify/core/utils/throttler.dart';
-import 'package:hiddify/features/connection/notifier/connection_notifier.dart';
-import 'package:hiddify/features/proxy/data/proxy_data_providers.dart';
-import 'package:hiddify/features/proxy/model/ip_info_entity.dart' as oldipinfo;
-import 'package:hiddify/features/proxy/model/proxy_failure.dart';
-import 'package:hiddify/hiddifycore/generated/v2/hcore/hcore.pb.dart';
-import 'package:hiddify/hiddifycore/init_signal.dart';
-import 'package:hiddify/utils/riverpod_utils.dart';
-import 'package:hiddify/utils/utils.dart';
+import 'package:netveil/core/haptic/haptic_service.dart';
+import 'package:netveil/core/preferences/general_preferences.dart';
+import 'package:netveil/core/utils/throttler.dart';
+import 'package:netveil/features/connection/notifier/connection_notifier.dart';
+import 'package:netveil/features/proxy/data/proxy_data_providers.dart';
+import 'package:netveil/features/proxy/model/ip_info_entity.dart' as oldipinfo;
+import 'package:netveil/features/proxy/model/proxy_failure.dart';
+import 'package:netveil/hiddifycore/generated/v2/hcore/hcore.pb.dart';
+import 'package:netveil/hiddifycore/init_signal.dart';
+import 'package:netveil/utils/riverpod_utils.dart';
+import 'package:netveil/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'active_proxy_notifier.g.dart';
