@@ -18,9 +18,11 @@ jobs:
         with:
           flutter-version: '3.38.5'
       - name: Decode keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | tr -d ' \n\r' | base64 -d > android/app/netveil.keystore
-          cat > android/key.properties << EOF
+          echo "$KEYSTORE_BASE64" | tr -d '[:space:]' | base64 -d > android/app/netveil.keystore
+          cat > android/key.properties <<EOF
           storePassword=${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword=${{ secrets.KEY_PASSWORD }}
           keyAlias=${{ secrets.KEY_ALIAS }}
