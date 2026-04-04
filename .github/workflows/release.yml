@@ -20,6 +20,9 @@ jobs:
       - name: Decode keystore
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         run: |
           python3 << 'PYEOF'
           import base64, os
@@ -31,10 +34,6 @@ jobs:
           PYEOF
           printf "storePassword=%s\nkeyPassword=%s\nkeyAlias=%s\nstoreFile=netveil.keystore\n" \
             "$KEY_STORE_PASSWORD" "$KEY_PASSWORD" "$KEY_ALIAS" > android/key.properties
-        env:
-          KEY_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
       - name: Build APK
         run: |
           flutter pub get
